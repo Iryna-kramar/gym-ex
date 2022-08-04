@@ -6,7 +6,7 @@ const ExercisesCard = ({ exercise }) => {
   return (
     <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
-      <Stack>
+      <Stack direction="row">
         <Button
           sx={{
             ml: "21px",
