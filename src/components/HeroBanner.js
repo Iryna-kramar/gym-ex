@@ -24,23 +24,22 @@ const HeroBanner = () => {
         Check out the most effective exercises
       </Typography>
       <Stack>
-        <a
+        <Button
           href="#exercises"
-          style={{
+          sx={{
             marginTop: "45px",
-            textDecoration: "none",
             width: "200px",
             textAlign: "center",
             background: "#FF2625",
             padding: "14px",
-            fontSize: "22px",
+            fontSize: "20px",
             textTransform: "none",
             color: "white",
             borderRadius: "4px",
           }}
         >
           Explore Exercises
-        </a>
+        </Button>
       </Stack>
       <Typography
         fontWeight={600}
