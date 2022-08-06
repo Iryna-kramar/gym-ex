@@ -7,21 +7,69 @@ import EquipnentImage from "../assets/icons/equipment.png";
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
 
+  const extraDetail = [
+    {
+      icon: BodyPartImage,
+      name: bodyPart,
+    },
+    {
+      icon: TargetImage,
+      name: target,
+    },
+    {
+      icon: EquipnentImage,
+      name: equipment,
+    },
+  ];
+
   return (
     <Stack
       gap="60px"
       sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
     >
-      <img src={gifUrl} alt={name} loading="laze" className="detai-image" />
+      <img src={gifUrl} alt={name} loading="laze" className="detail-image" />
       <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
-        <Typography variant = 'h3'>{name}</Typography>
-        <Typography>
+        <Typography variant="h3">{name}</Typography>
+        <Typography variant="h6">
           Exercises keep you strong. {name} {` `}
-          is one of the best exercises to target tour {target}. It will help you to
-          improve your mood and gain energy.
+          is one of the best exercises to target tour {target}. It will help you
+          to improve your mood and gain energy.
+        </Typography>
+        <Typography>
+          {extraDetail.map((item) => (
+            <Stack
+              mt="10px"
+              key={item.name}
+              direction="row"
+              gap="24px"
+              alignItems="center"
+            >
+              <Button
+                sx={{
+                  background: "#fff2db",
+                  borderRadius: "50%",
+                  width: "100px",
+                  height: "100px",
+                }}
+              >
+                <img
+                  key={name}
+                  src={item.icon}
+                  alt={bodyPart}
+                  style={{ width: "50px", height: "50px" }}
+                />
+              </Button>
+              <Typography
+                textTransform="capitalize"
+                sx={{ fontSize: { lg: "30px", xs: "20px" } }}
+              >
+                {item.name}
+              </Typography>
+            </Stack>
+          ))}
         </Typography>
       </Stack>
-    </Stack> 
+    </Stack>
   );
 };
 
