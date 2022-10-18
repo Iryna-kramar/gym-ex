@@ -3,15 +3,14 @@ import { Box, Stack, Typography } from "@mui/material";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 import Loader from "./Loader";
 
-const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
-    
+const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
   return (
-       <Box sx={{ mt: { lg: "100px", xs: "0" } }}>
+    <Box sx={{ mt: { lg: "100px", xs: "0" } }}>
       <Typography variant="h3" mb={5}>
         Exercuses that target the same muscle group
       </Typography>
       <Stack direction="row" sx={{ p: "2", position: "relative" }}>
-        {targetMuscleExercises.length !== '0' ? (
+        {targetMuscleExercises.length !== "0" ? (
           <HorizontalScrollbar data={targetMuscleExercises} />
         ) : (
           <Loader />
@@ -21,7 +20,7 @@ const SimilarExercises = ({targetMuscleExercises, equipmentExercises}) => {
         Exercuses that target the same equipment
       </Typography>
       <Stack direction="row" sx={{ p: "2", position: "relative" }}>
-        {equipmentExercises.length !== '0' ? (
+        {equipmentExercises.length !== "0" ? (
           <HorizontalScrollbar data={equipmentExercises} />
         ) : (
           <Loader />
